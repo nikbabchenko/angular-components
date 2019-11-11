@@ -9,7 +9,13 @@
     <p [class.is-active]="selectedUser === user">
       Username: <b>{{ user }}</b>
     </p>
-    <button [disabled]="selectedUser === user" class="button" [ngClass]="{ 'is-primary': selectedUser !== user, 'is-warning': selectedUser === user }" (click)="onButtonClick(i)">Select user</button>
+    <button
+      [disabled]="selectedUser === user"
+      class="button"
+      [ngClass]="{ 'is-primary': selectedUser !== user, 'is-warning': selectedUser === user }"
+      (click)="onButtonClick(i)">
+      Select user
+    </button>
   </li>
 </ul>
 

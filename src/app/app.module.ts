@@ -9,9 +9,10 @@ import { ClassBindingComponent } from './class-binding/class-binding.component';
 import { HightlightOptionsService } from './shared/highlight.service';
 import { SharedModule } from './shared/shared.module';
 import { StyleBindingComponent } from './style-binding/style-binding.component';
+import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 
 @NgModule({
-  declarations: [AppComponent, UsersComponent, NavbarComponent, ClassBindingComponent, StyleBindingComponent],
+  declarations: [AppComponent, UsersComponent, NavbarComponent, ClassBindingComponent, StyleBindingComponent, TwoWayBindingComponent],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [HightlightOptionsService],
   bootstrap: [AppComponent]

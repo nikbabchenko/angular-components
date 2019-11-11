@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { ClassBindingComponent } from './class-binding/class-binding.component';
 import { StyleBindingComponent } from './style-binding/style-binding.component';
+import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 
 const routes: Routes = [
   { path: '', component: UsersComponent, pathMatch: 'full' },
   { path: 'class', component: ClassBindingComponent },
-  { path: 'style', component: StyleBindingComponent }
+  { path: 'style', component: StyleBindingComponent },
+  { path: 'two-way-binding', component: TwoWayBindingComponent }
 ];
 
 @NgModule({

@@ -8,19 +8,23 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   routes = [
     {
-      title: 'Users',
-      link: ['/'],
-      options: {
-        exact: true
-      }
-    },
-    {
       title: 'Class Binding',
       link: ['/class']
     },
     {
       title: 'Style Binding',
       link: ['/style']
+    },
+    {
+      title: 'Two Way Binding',
+      link: ['/two-way-binding']
+    },
+    {
+      title: 'Users',
+      link: ['/'],
+      options: {
+        exact: true
+      }
     }
   ];
 
