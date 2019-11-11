@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~highlight.js/styles/atom-one-light';
+
+.active-toggler {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  z-index: 999;
+}
+
+.content li + li {
+  margin-top: 20px;
+}

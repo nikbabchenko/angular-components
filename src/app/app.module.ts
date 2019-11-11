@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ClassBindingComponent } from './class-binding/class-binding.component';
+import { HightlightOptionsService } from './shared/highlight.service';
+import { SharedModule } from './shared/shared.module';
+import { StyleBindingComponent } from './style-binding/style-binding.component';
 
 @NgModule({
-  declarations: [AppComponent, UsersComponent, NavbarComponent],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  declarations: [AppComponent, UsersComponent, NavbarComponent, ClassBindingComponent, StyleBindingComponent],
+  imports: [BrowserModule, AppRoutingModule, SharedModule],
+  providers: [HightlightOptionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

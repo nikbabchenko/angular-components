@@ -1,0 +1,41 @@
+<h1 class="title">Style binding</h1>
+<h3 class="sub-title">Overwrite all existing classes with a new class:</h3>
+
+<div class="content" type="1">
+  <ol>
+    <li>
+      <h4 class="sub-title">[style.[propName]]</h4>
+      <pre><code [highlight]="codeExample.styleBinding"></code></pre>
+      <div class="box">
+        <em>example</em>
+        <p>
+          <!-- example -->
+          <button class="button is-link" [style.color]="active ? 'red' : 'green'">Red</button>
+          <button class="button" [style.background-color]="active ? 'red' : 'green'">Save</button>
+          <button class="button is-warning" [style.font-size.px]="active ? 20 : 25">With font-size</button>
+          <button class="button is-link" [style.font-size]="active ? '20px' : '25px'">With font-size in px</button>
+          <button class="button is-success" [style.opacity]="active ? 1 : 0.5">With Opacity</button>
+          <!-- example end  -->
+        </p>
+      </div>
+    </li>
+    <li>
+      <h4 class="sub-title">[ngStyle]="&#123;prop: expression&#125;"</h4>
+      <pre><code [highlight]="codeExample.ngStyle"></code></pre>
+
+      <div class="box">
+        <em>example</em>
+
+        <!-- example -->
+        <button class="button is-link" [ngStyle]="{ color: active ? 'red' : 'green' }">Red</button>
+
+        <button class="button" [ngStyle]="{ 'background-color': active ? 'red' : 'green' }">Save</button>
+        <button class="button is-warning" [ngStyle]="{ 'font-size': active ? '20px' : '25px' }">Font-size</button>
+        <button class="button is-link" [ngStyle]="active ? { 'font-size': '20px', opacity: 1, color: blue, 'margin-top': '10px' } : {opacity: 0.5}">Several styles</button>
+        <!-- example end  -->
+      </div>
+    </li>
+  </ol>
+</div>
+
+<button class="button active-toggler is-rounded is-link" (click)="toggleActive()">Toggle Active</button>

@@ -1,0 +1,53 @@
+<h1 class="title">Class binding</h1>
+
+<h3 class="sub-title">Overwrite all existing classes with a new class:</h3>
+
+<div class="content" type="1">
+  <ol>
+    <li>
+      <h4 class="sub-title">[class.[className]]</h4>
+      <pre><code [highlight]="codeExample.className"></code></pre>
+      <div class="box">
+        <em>example</em>
+
+        <!-- example -->
+        <div class="item" [class.is-active]="active">Lorem ipsum</div>
+        <!-- example end  -->
+      </div>
+    </li>
+    <li>
+      <h4 class="sub-title">[ngClass]="&#123;cssClass: expression&#125;"</h4>
+      <pre><code [highlight]="codeExample.ngClass"></code></pre>
+
+      <div class="box">
+        <em>example</em>
+
+        <!-- example -->
+        <div class="item" [ngClass]="{ 'is-active': active }">Lorem ipsum</div>
+        <!-- example end  -->
+      </div>
+    </li>
+    <li>
+      <h4 class="sub-title">Class interpolation</h4>
+      <pre><code [highlight]="codeExample.interPolation"></code></pre>
+
+      <div class="box">
+        <em>example</em>
+
+        <!-- example -->
+        <div class="item {{ active ? 'is-active' : '' }}">Lorem ipsum</div>
+        <!-- example end  -->
+      </div>
+    </li>
+    <li>
+      <h4 class="sub-title">Fully Overwrite Class</h4>
+      <pre><code [highlight]="codeExample.overwrite"></code></pre>
+
+      <!-- example -->
+      <div class="item" [attr.class]="active ? 'is-active' : 'not-active'">Lorem ipsum</div>
+      <!-- example end  -->
+    </li>
+  </ol>
+</div>
+
+<button class="button active-toggler is-rounded is-link" (click)="toggleActive()">Toggle Active</button>

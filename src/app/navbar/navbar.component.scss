@@ -3,3 +3,8 @@
   border-bottom: 1px solid #ccc;
   margin-bottom: 15px;
 }
+
+.navbar-link.is-active,
+a.navbar-item.is-active {
+  color: #cc00dd;
+}
