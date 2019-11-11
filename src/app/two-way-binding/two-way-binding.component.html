@@ -1,6 +1,4 @@
 <h1 class="title">Two-way data-binding</h1>
-
-<h3 class="sub-title">Overwrite all existing classes with a new class:</h3>
 <div class="content" type="1">
   <ol>
     <li>
@@ -15,6 +13,9 @@
         <p><b>input.value: </b>{{ userInput.value }}</p>
         <p><b>user.firstName: </b>{{ user?.firstName }}</p>
         <p><b>user: </b>{{ user | json }}</p>
+        <p><button class="button is-link" (click)="user.firstName = user.firstName.toUpperCase()">Set firstName UpperCase</button></p>
+        <p><button class="button is-link" (click)="user.firstName = 'Ivan'">Set firstName to 'Ivan'</button></p>
+
         <!-- example end  -->
       </div>
     </li>
@@ -46,6 +47,28 @@
         <p><b>user.lastName: </b>{{ user?.lastName }}</p>
         <p><b>user: </b>{{ user | json }}</p>
         <!-- example end  -->
+      </div>
+    </li>
+
+    <li>
+      <h4>Radio</h4>
+      <pre><code [highlight]="codeExample.radioBinding"></code></pre>
+      <div classs="box">
+        <div class="control">
+          <label class="radio">
+            <input [(ngModel)]="color" value="red" type="radio" />
+            Red
+          </label>
+          <label class="radio">
+            <input [(ngModel)]="color" value="blue" type="radio" />
+            Blue
+          </label>
+          <label class="radio">
+            <input [(ngModel)]="color" value="green" type="radio" />
+            Green
+          </label>
+          <p [style.color]="color">Current color: {{ color }}</p>
+        </div>
       </div>
     </li>
   </ol>

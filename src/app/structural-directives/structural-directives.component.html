@@ -1,0 +1,53 @@
+<h1 class="title">Two-way data-binding</h1>
+
+<div class="content" type="1">
+  <ol>
+    <li>
+      <h4 class="sub-title">*ngIf</h4>
+      <pre><code [highlight]="codeExample.ngIf"></code></pre>
+      <!-- example -->
+      <div *ngIf="active" class="box">
+        <p>Conditionally show when active</p>
+      </div>
+      <!-- example end  -->
+    </li>
+    <li>
+      <h4 class="sub-title">*ngIf - else</h4>
+      <pre><code [highlight]="codeExample.ngIfElse"></code></pre>
+      <!-- example -->
+      <div class="box">
+        <div *ngIf="user; else userNotAuthorized">
+          <p class="notification is-success">Hello, {{ user }}</p>
+          <button class="button is-primary rounded" (click)="user = null">Logout</button>
+        </div>
+      </div>
+      <ng-template #userNotAuthorized>
+        <p class="notification is-danger">not authroized</p>
+        <button class="button is-link" (click)="user = 'John'">Login as Ivan Ivan</button>
+      </ng-template>
+      <!-- example end  -->
+    </li>
+    <li>
+      <h4 class="sub-title">*ngFor</h4>
+      <pre><code [highlight]="codeExample.ngFor"></code></pre>
+      <div *ngFor="let color of colors; trackBy: color" class="box">
+        <p [style.color]="color">I'm {{ color }}</p>
+      </div>
+    </li>
+    <li>
+      <h4 class="sub-title">*ngSwitch</h4>
+      <!-- <pre><code [highlight]="codeExample.ngSwitch"></code></pre> -->
+      <div class="control">
+        <label *ngFor="let category of categories; trackBy: category" class="radio"> <input type="radio" [(ngModel)]="selectedCategory" [value]="category" /> {{ category }}</label>
+        <p>current category: {{ selectedCategory }}</p>
+        <div [ngSwitch]="selectedCategory">
+          <us-bus *ngSwitchCase="'bus'"> </us-bus>
+          <us-train *ngSwitchCase="'train'"></us-train>
+          <us-other-category [category]="selectedCategory?.toUpperCase()" *ngSwitchDefault></us-other-category>
+        </div>
+      </div>
+    </li>
+  </ol>
+</div>
+
+<button class="button active-toggler is-rounded is-link" (click)="toggleActive()">Toggle Active</button>

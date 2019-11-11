@@ -20,6 +20,10 @@ export class NavbarComponent implements OnInit {
       link: ['/two-way-binding']
     },
     {
+      title: 'Structural Directives',
+      link: ['/structural']
+    },
+    {
       title: 'Users',
       link: ['/'],
       options: {
