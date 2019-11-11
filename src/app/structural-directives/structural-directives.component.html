@@ -1,9 +1,9 @@
-<h1 class="title">Two-way data-binding</h1>
+<h1 class="title">Structural Directives</h1>
 
 <div class="content" type="1">
   <ol>
     <li>
-      <h4 class="sub-title">*ngIf</h4>
+      <h4 class="sub-title">*ngIf="expression"</h4>
       <pre><code [highlight]="codeExample.ngIf"></code></pre>
       <!-- example -->
       <div *ngIf="active" class="box">
@@ -12,7 +12,7 @@
       <!-- example end  -->
     </li>
     <li>
-      <h4 class="sub-title">*ngIf - else</h4>
+      <h4 class="sub-title">*ngIf="expression"; else template;</h4>
       <pre><code [highlight]="codeExample.ngIfElse"></code></pre>
       <!-- example -->
       <div class="box">
@@ -36,10 +36,10 @@
     </li>
     <li>
       <h4 class="sub-title">*ngSwitch</h4>
-      <!-- <pre><code [highlight]="codeExample.ngSwitch"></code></pre> -->
+      <pre><code [highlight]="codeExample.ngSwitch"></code></pre>
       <div class="control">
         <label *ngFor="let category of categories; trackBy: category" class="radio"> <input type="radio" [(ngModel)]="selectedCategory" [value]="category" /> {{ category }}</label>
-        <p>current category: {{ selectedCategory }}</p>
+        <h3 class="sub-title">current category: {{ selectedCategory }}</h3>
         <div [ngSwitch]="selectedCategory">
           <us-bus *ngSwitchCase="'bus'"> </us-bus>
           <us-train *ngSwitchCase="'train'"></us-train>

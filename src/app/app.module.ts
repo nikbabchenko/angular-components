@@ -13,6 +13,7 @@ import { StyleBindingComponent } from './style-binding/style-binding.component';
 import { TrainComponent } from './train/train.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { UsersComponent } from './users/users.component';
+import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UsersComponent } from './users/users.component';
     StructuralDirectivesComponent,
     BusComponent,
     TrainComponent,
-    OtherCategoryComponent
+    OtherCategoryComponent,
+    LifecycleHooksComponent
   ],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [HightlightOptionsService],

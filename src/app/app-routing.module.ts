@@ -5,13 +5,15 @@ import { ClassBindingComponent } from './class-binding/class-binding.component';
 import { StyleBindingComponent } from './style-binding/style-binding.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
+import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 
 const routes: Routes = [
   { path: '', component: UsersComponent, pathMatch: 'full' },
   { path: 'class', component: ClassBindingComponent },
   { path: 'style', component: StyleBindingComponent },
   { path: 'two-way-binding', component: TwoWayBindingComponent },
-  { path: 'structural', component: StructuralDirectivesComponent }
+  { path: 'structural', component: StructuralDirectivesComponent },
+  { path: 'hooks', component: LifecycleHooksComponent }
 ];
 
 @NgModule({

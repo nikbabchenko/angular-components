@@ -11,7 +11,12 @@ export class ClassBindingComponent {
     interPolation: `<div  class="item {{ active ? 'is-active' : '' }}"></div>`,
     overwrite: `<div class="item" [attr.class]="active ? 'is-active' : 'not-active'">I'm {{ active ? 'active' : 'not-active'}}</div>`,
     className: `<div class="item" [class.is-active]="active">Lorem ipsum</div>`,
-    ngClass: `<div class="item" [ngClass]="{ 'is-active': active }">Lorem ipsum</div>`
+    ngClass: `<div class="item" [ngClass]="{ 'is-active': active }">Lorem ipsum</div>`,
+    css: `.is-active {
+  color: purple;
+  background-color: burlywood;
+}
+    `
   };
   constructor() {}
 

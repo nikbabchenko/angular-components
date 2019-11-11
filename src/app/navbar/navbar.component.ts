@@ -24,6 +24,10 @@ export class NavbarComponent implements OnInit {
       link: ['/structural']
     },
     {
+      title: 'LifeCycleHooks',
+      link: ['/hooks']
+    },
+    {
       title: 'Users',
       link: ['/'],
       options: {
