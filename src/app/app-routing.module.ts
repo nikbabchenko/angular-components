@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { UsersComponent } from './users/users.component';
-import { ClassBindingComponent } from './class-binding/class-binding.component';
-import { StyleBindingComponent } from './style-binding/style-binding.component';
-import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
-import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
-import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ClassBindingComponent } from './pages/class-binding/class-binding.component';
+import { StructuralDirectivesComponent } from './pages/structural-directives/structural-directives.component';
+import { StyleBindingComponent } from './pages/style-binding/style-binding.component';
+import { TwoWayBindingComponent } from './pages/two-way-binding/two-way-binding.component';
+import { UsersComponent } from './pages/users/users.component';
+import { LifecycleHooksComponent } from './pages/lifecycle-hooks/lifecycle-hooks.component';
 
 const routes: Routes = [
   { path: '', component: UsersComponent, pathMatch: 'full' },

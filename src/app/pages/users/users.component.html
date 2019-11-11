@@ -1,0 +1,38 @@
+<h1 class="title">{{ title }}</h1>
+
+<h2 class="title">
+  Selected user: <b class="has-text-primary">{{ selectedUser }}</b>
+</h2>
+
+<input
+  class="input"
+  placeholder="enter new username"
+  [(ngModel)]="addUserName"
+  (keyup.esc)="addUserName = ''"
+  (keyup.enter)="addUser()"
+/>
+
+<ul class="list">
+  <li class="list-item" *ngFor="let user of users trackBy: user; let i = index">
+    <p [class.is-active]="selectedUser === user">
+      Username: <b>{{ user }}</b>
+    </p>
+    <button
+      [disabled]="selectedUser === user"
+      class="button"
+      [ngClass]="{ 'is-primary': selectedUser !== user, 'is-warning': selectedUser === user }"
+      (click)="onButtonClick(i)"
+    >
+      Select user
+    </button>
+    <button (click)="removeUser(i)"  class="button is-danger is-outlined">
+      <span>Delete</span>
+      <span class="icon is-small">
+        <i class="fas fa-times"></i>
+      </span>
+    </button>
+  </li>
+</ul>
+
+<hr />
+<div class="box" *ngIf="users.length > 5">More than 5 users</div>

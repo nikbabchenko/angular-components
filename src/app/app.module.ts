@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BusComponent } from './bus/bus.component';
-import { ClassBindingComponent } from './class-binding/class-binding.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { OtherCategoryComponent } from './other-category/other-category.component';
-import { HightlightOptionsService } from './shared/highlight.service';
+import { UsersComponent } from './pages/users/users.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ClassBindingComponent } from './pages/class-binding/class-binding.component';
+import { StyleBindingComponent } from './pages/style-binding/style-binding.component';
+import { TwoWayBindingComponent } from './pages/two-way-binding/two-way-binding.component';
+import { StructuralDirectivesComponent } from './pages/structural-directives/structural-directives.component';
+import { BusComponent } from './components/bus/bus.component';
+import { TrainComponent } from './components/train/train.component';
+import { OtherCategoryComponent } from './components/other-category/other-category.component';
+import { LifecycleHooksComponent } from './pages/lifecycle-hooks/lifecycle-hooks.component';
 import { SharedModule } from './shared/shared.module';
-import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
-import { StyleBindingComponent } from './style-binding/style-binding.component';
-import { TrainComponent } from './train/train.component';
-import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
-import { UsersComponent } from './users/users.component';
-import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
+import { HightlightOptionsService } from './shared/highlight.service';
 
 @NgModule({
   declarations: [
