@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HighlightModule } from 'ngx-highlightjs';
 
 @NgModule({
-  imports: [HighlightModule],
-  exports: [HighlightModule],
+  imports: [HighlightModule, FormsModule],
+  exports: [HighlightModule, FormsModule],
   declarations: [],
   providers: []
 })

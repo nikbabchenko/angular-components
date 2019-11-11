@@ -1,51 +1,52 @@
 <h1 class="title">Two-way data-binding</h1>
 
 <h3 class="sub-title">Overwrite all existing classes with a new class:</h3>
-
 <div class="content" type="1">
   <ol>
     <li>
-      <h4 class="sub-title">[class.[className]]</h4>
-      <pre><code [highlight]="codeExample.className"></code></pre>
+      <h4 class="sub-title">[(ngModel)]: Two-way binding</h4>
+      <pre><code [highlight]="codeExample.twoWay"></code></pre>
       <div class="box">
-        <em>example</em>
-
         <!-- example -->
-        <div class="item" [class.is-active]="active">Lorem ipsum</div>
+        <p>
+          <label class="label" for="username">UserName:</label>
+          <input class="input" #userInput [(ngModel)]="user.firstName" id="username" />
+        </p>
+        <p><b>input.value: </b>{{ userInput.value }}</p>
+        <p><b>user.firstName: </b>{{ user?.firstName }}</p>
+        <p><b>user: </b>{{ user | json }}</p>
         <!-- example end  -->
       </div>
     </li>
     <li>
-      <h4 class="sub-title">[ngClass]="&#123;cssClass: expression&#125;"</h4>
-      <pre><code [highlight]="codeExample.ngClass"></code></pre>
-
+      <h4 class="sub-title">Two-way binding without ngModel</h4>
+      <pre><code [highlight]="codeExample.twoWayWithValue"></code></pre>
       <div class="box">
-        <em>example</em>
-
         <!-- example -->
-        <div class="item" [ngClass]="{ 'is-active': active }">Lorem ipsum</div>
+        <p>
+          <label class="label" for="userLastName">User's Lastname:</label>
+          <input #lastNameInput class="input" [value]="user.lastName" (input)="user.lastName = $event.target.value" id="userLastName" />
+        </p>
+        <p><b>input.value: </b>{{ lastNameInput.value }}</p>
+        <p><b>user.lastName: </b>{{ user?.lastName }}</p>
+        <p><b>user: </b>{{ user | json }}</p>
         <!-- example end  -->
       </div>
     </li>
     <li>
-      <h4 class="sub-title">Class interpolation</h4>
-      <pre><code [highlight]="codeExample.interPolation"></code></pre>
-
+      <h4 class="sub-title">NgModelChange</h4>
+      <pre><code [highlight]="codeExample.twoWayNgModelChange"></code></pre>
       <div class="box">
-        <em>example</em>
-
         <!-- example -->
-        <div class="item {{ active ? 'is-active' : '' }}">Lorem ipsum</div>
+        <p>
+          <label class="label" for="userLastName">User's Lastname:</label>
+          <input #lastNameInput class="input" [ngModel]="user.lastName" (ngModelChange)="user.lastName = $event" id="userLastName" />
+        </p>
+        <p><b>input.value: </b>{{ lastNameInput.value }}</p>
+        <p><b>user.lastName: </b>{{ user?.lastName }}</p>
+        <p><b>user: </b>{{ user | json }}</p>
         <!-- example end  -->
       </div>
-    </li>
-    <li>
-      <h4 class="sub-title">Fully Overwrite Class</h4>
-      <pre><code [highlight]="codeExample.overwrite"></code></pre>
-
-      <!-- example -->
-      <div class="item" [attr.class]="active ? 'is-active' : 'not-active'">Lorem ipsum</div>
-      <!-- example end  -->
     </li>
   </ol>
 </div>
