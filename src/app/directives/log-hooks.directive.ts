@@ -1,4 +1,4 @@
-import { Directive, ElementRef, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import { Directive, ElementRef, OnInit, AfterViewInit, OnDestroy, DoCheck } from '@angular/core';
 
 const logIt = (el: HTMLElement, text: string) => {
   const wrapper = document.createElement('div');
@@ -11,7 +11,7 @@ const logIt = (el: HTMLElement, text: string) => {
 @Directive({
   selector: '[usLogHooks]'
 })
-export class LogHooksDirective implements OnInit, AfterViewInit, OnDestroy {
+export class LogHooksDirective implements OnInit, AfterViewInit, OnDestroy, DoCheck {
   constructor(private el: ElementRef) {}
 
   ngOnInit() {
@@ -22,6 +22,11 @@ export class LogHooksDirective implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit() {
     console.log('--ngAfterViewInit');
     logIt(this.el.nativeElement, `ngAfterViewInit`);
+  }
+
+  ngDoCheck() {
+    console.log('--ngDoCheck');
+    logIt(this.el.nativeElement, `ngDoCheck`);
   }
 
   ngOnDestroy() {

@@ -1,0 +1,50 @@
+<h1 class="title">Directives</h1>
+
+<h2 class="Riplle"></h2>
+
+<div class="content" type="1">
+  <ol>
+    <li>
+      <h4 class="sub-title">Ripple</h4>
+      <!-- example -->
+      <button class="button is-danger" usRippleButton="ripple">Show Ripple</button>
+      <button class="button">off Ripple</button>
+      <!-- example end  -->
+    </li>
+    <li>
+      <h4 class="sub-title">Content equal height</h4>
+      <!-- example -->
+      <div [usEqualHeight]="'equal'">
+        <div class="box equal has-background-primary">
+          Lorem ipsum <b>equal height</b>
+        </div>
+
+        <div class="box ">
+          Lorem ipsum
+        </div>
+
+        <div class="box">
+          Lorem ipsum
+        </div>
+
+        <div class="box equal has-background-primary">
+          Lorem ipsum <b>equal height</b>
+        </div>
+        <div class="box equal has-background-primary">
+            <b>equal height</b>
+          {{ content }}
+        </div>
+
+      </div>
+      <button class="button" (click)="addContent()">add content to last box</button>
+      <button class="button" (click)="content = 'Lorem'">Reset content</button>
+      <!-- example end  -->
+    </li>
+    <li>
+        <h4 class="sub-title">Only Numbers Input</h4>
+        <!-- example -->
+        <input type="text"  usOnlyNumbers placeholder="0" class="input" />
+        <!-- example end  -->
+      </li>
+  </ol>
+</div>

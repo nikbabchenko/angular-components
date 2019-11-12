@@ -28,6 +28,14 @@ export class NavbarComponent implements OnInit {
       link: ['/hooks']
     },
     {
+      title: 'Directives',
+      link: ['/directives']
+    },
+    {
+      title: 'Pipes',
+      link: ['/pipes']
+    },
+    {
       title: 'Users',
       link: ['/'],
       options: {

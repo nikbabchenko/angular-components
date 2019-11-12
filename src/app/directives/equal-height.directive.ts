@@ -1,6 +1,5 @@
 import { Directive, ElementRef, HostListener, Input, AfterViewChecked, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 
 export enum WindowBreakPoints {
   SM = 767,
@@ -12,7 +11,7 @@ export enum WindowBreakPoints {
 })
 export class EqualHeightDirective implements AfterViewChecked, OnDestroy {
   // class name to match height
-  @Input() mpEqualHeight: string;
+  @Input() usEqualHeight: string;
   @Input() maxWidth: WindowBreakPoints;
 
   ngUnsubscribe = new Subject();
@@ -21,13 +20,13 @@ export class EqualHeightDirective implements AfterViewChecked, OnDestroy {
 
   ngAfterViewChecked() {
     // call our setEqualHeight function here later
-    this.setEqualHeight(this.el.nativeElement, this.mpEqualHeight);
+    this.setEqualHeight(this.el.nativeElement, this.usEqualHeight);
   }
 
   @HostListener('window:resize')
   onResize() {
     // call our setEqualHeight function here later
-    this.setEqualHeight(this.el.nativeElement, this.mpEqualHeight);
+    this.setEqualHeight(this.el.nativeElement, this.usEqualHeight);
   }
 
   setEqualHeight(parent: HTMLElement, className: string) {
@@ -58,11 +57,11 @@ export class EqualHeightDirective implements AfterViewChecked, OnDestroy {
   }
 
   resetHeight() {
-    if (!this.el.nativeElement || !this.mpEqualHeight) {
+    if (!this.el.nativeElement || !this.usEqualHeight) {
       return;
     }
 
-    const children = this.el.nativeElement.getElementsByClassName(this.mpEqualHeight);
+    const children = this.el.nativeElement.getElementsByClassName(this.usEqualHeight);
 
     Array.from(children).forEach((x: HTMLElement) => {
       x.style.height = 'initial';

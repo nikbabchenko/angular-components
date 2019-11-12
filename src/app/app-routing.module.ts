@@ -6,6 +6,8 @@ import { StyleBindingComponent } from './pages/style-binding/style-binding.compo
 import { TwoWayBindingComponent } from './pages/two-way-binding/two-way-binding.component';
 import { UsersComponent } from './pages/users/users.component';
 import { LifecycleHooksComponent } from './pages/lifecycle-hooks/lifecycle-hooks.component';
+import { DirectivesComponent } from './pages/directives/directives.component';
+import { PipesComponent } from 'src/pipes/pipes.component';
 
 const routes: Routes = [
   { path: '', component: UsersComponent, pathMatch: 'full' },
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'style', component: StyleBindingComponent },
   { path: 'two-way-binding', component: TwoWayBindingComponent },
   { path: 'structural', component: StructuralDirectivesComponent },
-  { path: 'hooks', component: LifecycleHooksComponent }
+  { path: 'hooks', component: LifecycleHooksComponent },
+  { path: 'directives', component: DirectivesComponent },
+  { path: 'pipes', component: PipesComponent }
 ];
 
 @NgModule({

@@ -15,6 +15,8 @@ import { LifecycleHooksComponent } from './pages/lifecycle-hooks/lifecycle-hooks
 import { SharedModule } from './shared/shared.module';
 import { HightlightOptionsService } from './shared/highlight.service';
 import { LogHooksDirective } from './directives/log-hooks.directive';
+import { PipesComponent } from '../pipes/pipes.component';
+import { DirectivesComponent } from './pages/directives/directives.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { LogHooksDirective } from './directives/log-hooks.directive';
     TrainComponent,
     OtherCategoryComponent,
     LifecycleHooksComponent,
-    LogHooksDirective
+    LogHooksDirective,
+    DirectivesComponent,
+    PipesComponent
   ],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [HightlightOptionsService],
