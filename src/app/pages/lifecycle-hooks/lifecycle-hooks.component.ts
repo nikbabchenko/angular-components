@@ -9,4 +9,6 @@ export class LifecycleHooksComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  handleButtonClick() {}
 }

@@ -14,6 +14,7 @@ import { OtherCategoryComponent } from './components/other-category/other-catego
 import { LifecycleHooksComponent } from './pages/lifecycle-hooks/lifecycle-hooks.component';
 import { SharedModule } from './shared/shared.module';
 import { HightlightOptionsService } from './shared/highlight.service';
+import { LogHooksDirective } from './directives/log-hooks.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HightlightOptionsService } from './shared/highlight.service';
     BusComponent,
     TrainComponent,
     OtherCategoryComponent,
-    LifecycleHooksComponent
+    LifecycleHooksComponent,
+    LogHooksDirective
   ],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [HightlightOptionsService],
