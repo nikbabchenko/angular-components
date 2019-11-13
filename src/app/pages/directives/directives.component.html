@@ -7,8 +7,8 @@
     <li>
       <h4 class="sub-title">Ripple</h4>
       <!-- example -->
-      <button class="button is-danger" usRippleButton="ripple">Show Ripple</button>
-      <button class="button">off Ripple</button>
+      <button class="button is-danger" [usRippleButton]="ripple">Show Ripple</button>
+      <button class="button" (click)="ripple = null">off Ripple</button>
       <!-- example end  -->
     </li>
     <li>
@@ -43,7 +43,7 @@
     <li>
         <h4 class="sub-title">Only Numbers Input</h4>
         <!-- example -->
-        <input type="text"  usOnlyNumbers placeholder="0" class="input" />
+        <input type="text" usOnlyNumbers placeholder="0" class="input" />
         <!-- example end  -->
       </li>
   </ol>

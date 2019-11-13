@@ -1,4 +1,4 @@
-import { Directive, Renderer2, ElementRef, HostListener, OnInit } from '@angular/core';
+import { Directive, Renderer2, ElementRef, HostListener, OnInit, Input } from '@angular/core';
 
 const styles = `
 .is-material {
@@ -26,6 +26,8 @@ const styles = `
   selector: '[usRippleButton]'
 })
 export class RippleButtonDirective implements OnInit {
+  @Input() usRippleButton = true;
+
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
   ngOnInit() {
@@ -44,6 +46,11 @@ export class RippleButtonDirective implements OnInit {
 
     if (innerCircle) {
       el.removeChild(innerCircle);
+    }
+
+    if (!this.usRippleButton) {
+      debugger;
+      return;
     }
 
     const circle = document.createElement('div');

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
+let index = 1;
 @Component({
   selector: 'us-pipes',
   templateUrl: './pipes.component.html',
@@ -18,5 +19,10 @@ export class PipesComponent implements OnInit {
     this.http.get(`https://jsonplaceholder.typicode.com/users`).subscribe((users: any[]) => {
       this.users = users;
     });
+  }
+
+  addUser() {
+    this.users = [...this.users, { name: `W user ${index}`, surname: 'surname' }];
+    index++;
   }
 }

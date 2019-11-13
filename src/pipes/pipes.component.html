@@ -3,9 +3,28 @@
 
 <div class="content" type="1">
   <ol>
-    <li>Date pipe</li>
-    <p>
-      {{ today }}
-    </p>
+    <li>
+      <!-- <h4 class="sub-title">[class.[className]]="expression"</h4> -->
+      <div class="box">
+        <em>Sort by</em>
+
+        <p *ngFor="let prop of sortByProps">
+          <label>
+            <input type="radio" [(ngModel)]="sortByField" [value]="prop" />
+            {{ prop }}
+          </label>
+        </p>
+      </div>
+      <ol>
+        <li *ngFor="let user of users | usSort: sortByField">
+          <div class="box">
+            <b>{{ user.name }}</b>
+            <p>email: {{ user.email }}</p>
+          </div>
+        </li>
+      </ol>
+    </li>
   </ol>
+
+  <button class="button" (click)="addUser()">Add User</button>
 </div>
