@@ -1,7 +1,11 @@
-{{ title }}
 
+<h1 class="title">LifeCycle Hooks</h1>
 
-<us-other-category [category]="'bus'" hello="world" usLogHooks></us-other-category>
+<div class="box" *ngIf="isShowComponent" hello="world" usLogHooks [counter]="counter">
+    Component
+</div>
 
-<button (click)="handleButtonClick()">Some button</button>
+<button class="button is-link" (click)="handleButtonClick()">Some button</button>
+<button class="button is-warning" (click)="increaceCounter()">Increase Counter</button>
+<button class="button is-danger" (click)="toggleComponent()">Toggle Component</button>
 

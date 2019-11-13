@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pipes.component.scss']
 })
 export class PipesComponent implements OnInit {
-  constructor() {}
+  users: any[] = [];
+  sortByProps = ['name', 'email'];
+  sortByField = this.sortByProps[0];
+  today = new Date();
 
-  ngOnInit() {}
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.http.get(`https://jsonplaceholder.typicode.com/users`).subscribe((users: any[]) => {
+      this.users = users;
+    });
+  }
 }

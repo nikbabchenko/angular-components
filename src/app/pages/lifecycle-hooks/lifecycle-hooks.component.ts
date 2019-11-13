@@ -7,6 +7,8 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 })
 export class LifecycleHooksComponent implements OnInit, AfterViewInit {
   title = 'red';
+  counter = 1;
+  isShowComponent = true;
   constructor() {}
 
   ngOnInit() {}
@@ -15,4 +17,12 @@ export class LifecycleHooksComponent implements OnInit, AfterViewInit {
   }
 
   handleButtonClick() {}
+
+  increaceCounter() {
+    this.counter++;
+  }
+
+  toggleComponent() {
+    this.isShowComponent = !this.isShowComponent;
+  }
 }
